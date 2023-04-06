@@ -1,7 +1,10 @@
+import fs from "fs";
 import * as dotenv from "dotenv";
 dotenv.config();
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-foundry";
+import "hardhat-preprocessor";
 import "hardhat-deploy";
 
 // If not set, it uses ours Alchemy's default API key.
@@ -12,6 +15,14 @@ const deployerPrivateKey =
   process.env.DEPLOYER_PRIVATE_KEY ?? "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 // If not set, it uses ours Etherscan default API key.
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
+
+function getRemappings() {
+  return fs
+    .readFileSync("remappings.txt", "utf8")
+    .split("\n")
+    .filter(Boolean)
+    .map((line: string) => line.trim().split("="));
+}
 
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
@@ -72,6 +83,21 @@ const config: HardhatUserConfig = {
     etherscan: {
       apiKey: `${etherscanApiKey}`,
     },
+  },
+  preprocess: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    eachLine: _hre => ({
+      transform: (line: string) => {
+        if (line.match(/^\s*import /i)) {
+          getRemappings().forEach(([find, replace]) => {
+            if (line.match(find)) {
+              line = line.replace(find, replace);
+            }
+          });
+        }
+        return line;
+      },
+    }),
   },
 };
 

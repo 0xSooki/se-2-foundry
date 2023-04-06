@@ -1439,6 +1439,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nomicfoundation/hardhat-foundry@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@nomicfoundation/hardhat-foundry@npm:1.0.0"
+  dependencies:
+    chalk: ^2.4.2
+  peerDependencies:
+    hardhat: ^2.12.6
+  checksum: 9c3d3746a37d6d6a7246af6f9b945129f3f6fadb2aad528632f75c3c7a1768e0faf75ddf7577072aebea98a2ab287a1a6422af741eed4c666bd6e70c9d81f712
+  languageName: node
+  linkType: hard
+
 "@nomicfoundation/hardhat-network-helpers@npm:^1.0.6":
   version: 1.0.6
   resolution: "@nomicfoundation/hardhat-network-helpers@npm:1.0.6"
@@ -1774,6 +1785,7 @@ __metadata:
     "@ethersproject/abi": ^5.7.0
     "@ethersproject/providers": ^5.7.1
     "@nomicfoundation/hardhat-chai-matchers": ^1.0.3
+    "@nomicfoundation/hardhat-foundry": ^1.0.0
     "@nomicfoundation/hardhat-network-helpers": ^1.0.6
     "@nomicfoundation/hardhat-toolbox": ^2.0.0
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13"
@@ -1797,6 +1809,7 @@ __metadata:
     hardhat: ^2.11.2
     hardhat-deploy: ^0.11.25
     hardhat-gas-reporter: ^1.0.9
+    hardhat-preprocessor: ^0.1.5
     prettier: ^2.8.4
     qrcode: ^1.5.1
     solidity-coverage: ^0.8.2
@@ -7976,6 +7989,17 @@ __metadata:
   peerDependencies:
     hardhat: ^2.0.2
   checksum: 77f8f8d085ff3d9d7787f0227e5355e1800f7d6707bc70171e0567bf69706703ae7f6f53dce1be1d409e7e71e3629a434c94b546bdbbc1e4c1af47cd5d0c6776
+  languageName: node
+  linkType: hard
+
+"hardhat-preprocessor@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "hardhat-preprocessor@npm:0.1.5"
+  dependencies:
+    murmur-128: ^0.2.1
+  peerDependencies:
+    hardhat: ^2.0.5
+  checksum: 7d543c2965828441741950b153d584ff096d7a006975f06af9870e05a928e56122b463c4a1b3b346f9a3baccaa6ee2dec1dfd026a434ac714ebf127bbe842fef
   languageName: node
   linkType: hard
 
