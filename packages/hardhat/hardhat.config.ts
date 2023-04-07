@@ -27,7 +27,7 @@ function getRemappings() {
 
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
-  defaultNetwork: "localhost",
+  defaultNetwork: "sepolia",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
