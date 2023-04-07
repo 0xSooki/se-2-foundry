@@ -4,6 +4,7 @@ dotenv.config();
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-foundry";
+import "@truffle/dashboard-hardhat-plugin";
 import "hardhat-preprocessor";
 import "hardhat-deploy";
 
@@ -77,6 +78,20 @@ const config: HardhatUserConfig = {
     polygonMumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
+    },
+    "truffle-dashboard": {
+      url: "http://localhost:24012/rpc",
+    },
+  },
+  etherscan: {
+    apiKey: {
+      sepolia: `${etherscanApiKey}`,
+      mainnet: `${etherscanApiKey}`,
+      goerli: `${etherscanApiKey}`,
+      arbitrumOne: `${etherscanApiKey}`,
+      optimisticEthereum: `${etherscanApiKey}`,
+      polygon: `${etherscanApiKey}`,
+      polygonMumbai: `${etherscanApiKey}`,
     },
   },
   verify: {
