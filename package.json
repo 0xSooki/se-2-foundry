@@ -12,6 +12,7 @@
     "account": "yarn workspace @se-2/hardhat account",
     "chain": "yarn workspace @se-2/hardhat chain",
     "fork": "yarn workspace @se-2/hardhat fork",
+    "dashboard": "yarn workspace @se-2/hardhat dashboard",
     "deploy": "yarn workspace @se-2/hardhat tdeploy",
     "verify": "yarn workspace @se-2/hardhat verify",
     "compile": "yarn workspace @se-2/hardhat compile",
