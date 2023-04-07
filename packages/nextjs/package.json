@@ -8,6 +8,7 @@
     "build": "next build",
     "serve": "next start",
     "lint": "next lint",
+    "clean": "rm -rf ./generated",
     "format": "prettier --write . '!(node_module|.next|contracts)/**/*'",
     "check-types": "tsc --noEmit --incremental",
     "vercel": "vercel",
