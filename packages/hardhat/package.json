@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "account": "hardhat run utils/listAccount.ts",
-    "chain": "anvil",
+    "chain": "hardhat node --network hardhat --no-deploy",
     "compile": "hardhat compile",
     "deploy": "hardhat deploy --export-all ./temp/hardhat_contracts.json \"$@\" && hardhat run utils/generateTsAbis.ts",
     "fork": "MAINNET_FORKING_ENABLED=true hardhat node --network hardhat --no-deploy",
@@ -12,9 +12,10 @@
     "lint-staged": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore",
     "verify": "hardhat verify",
     "clean": "rm -rf ./artifacts && rm -rf ./cache && rm -rf ./hardhat-deploy && rm -rf ./deployments && rm -rf ./typechain-types && forge clean",
+    "anvil": "make anvil",
     "build": "forge build",
     "test": "forge test",
-    "fdeploy": "forge deploy",
+    "fdeploy": "make deploy-anvil",
     "dashboard": "truffle dashboard",
     "tdeploy": "hardhat deploy --network truffle-dashboard --export-all ./temp/hardhat_contracts.json \"$@\" && hardhat run utils/generateTsAbis.ts"
   },

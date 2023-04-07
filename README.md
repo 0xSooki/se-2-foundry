@@ -12,9 +12,16 @@ It's a new version of scaffold-eth with its core functionality. Built using Next
 - 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
 - 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
 
+## TODO
+
+- [x] Integrate foundry
+- [x] Add truffle dashboard
+- [ ] generateTsABIs from foundry ```out``` folder
+
 ## Contents
 
 - [Scaffold-Eth 2 Foundry](#scaffold-eth-2-foundry)
+  - [TODO](#todo)
   - [Contents](#contents)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
